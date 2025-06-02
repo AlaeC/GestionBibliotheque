@@ -1,50 +1,58 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. This guide will help you set up and understand the structure of a Java project using **design patterns**: **Singleton** and **Factory Method**, based on a command management system for an online store.
-
-## Folder Structure
-
-The workspace contains the following folders:
-
-- `src`: Contains Java source files including:
-  - Product interfaces and implementations
-  - Product factories
-  - Order and order list management (Singleton)
-  - Main class for testing
-- `lib`: Maintains any external libraries or dependencies
-- `bin`: Generated compiled class files (by default)
-
-You can customize this structure via `.vscode/settings.json`.
+Welcome to the Library Management Java Project! This guide helps you understand the structure and functionality of an object-oriented application for managing a digital library.
 
 ## Project Overview
 
-This project implements:
+This project simulates the operations of a library using Java, implementing key object-oriented principles such as inheritance, interfaces, abstract classes, and exception handling.
 
-1. **Factory Pattern** – To dynamically create product instances from various categories:
-   - Food products (`ProduitAlimentaire`)
-   - Electronic products (`ProduitElectronique`)
-   - Clothing products (`ProduitVestimentaire`)
+## Folder Structure
 
-2. **Singleton Pattern** – To centralize and manage the list of all orders in a single shared instance (`ListeCommandes`).
+- `src`: Java source files, including:
+  - Abstract base class `Livre`
+  - Interface `Empruntable`
+  - Literary and educational book categories
+  - Library management class `Bibliotheque`
+  - Exception classes
+  - Console interface
+- `lib`: Any external libraries or dependencies
+- `bin`: Compiled Java class files (default output location)
 
 ## Functional Requirements
 
-- Users can create products by category.
-- Each order (`Commande`) contains multiple products.
-- All orders are managed centrally by a Singleton.
-- Orders display product details and total prices.
+- Add new books (Roman or Manuel) to the library
+- Display available books
+- Borrow books by ID
+- Return borrowed books
+- Prevent invalid actions via exception handling
 
-## Technical Constraints
+## Book Classification
 
-- Products must be created through specialized `ProduitFactory` classes.
-- The product interface (`Produit`) standardizes how all products are handled.
-- Commands and the global order list should be extensible for new product types.
+- **Littérature** (e.g., Romans, BD, Nouvelles) via `LivreLitteraire`
+- **Éducation** (e.g., Manuels, Revues scientifiques) via `LivreEducatif`
+
+Books are created using an abstract `Livre` class and categorized through inheritance. The `Empruntable` interface standardizes borrowing/return actions.
+
+## Technical Features
+
+- **Object-Oriented Design**:
+  - Abstract classes for core definitions
+  - Inheritance for specialization
+  - Interface for standard actions
+- **Data Handling**:
+  - Dynamic storage of books using `LinkedList<Livre>`
+- **User Interface**:
+  - Console-based menu for user interactions
+- **Error Handling**:
+  - Custom exceptions like `LivreIndisponibleException`, `LivreNonEmprunteException`
 
 ## How to Run
 
-1. Implement or complete classes in `src/` following the provided skeleton.
-2. Use the `Main` class to create products and place them in orders.
-3. The Singleton `ListeCommandes` keeps track of all submitted orders.
-4. Use `afficherCommande()` and `afficherToutesLesCommandes()` methods to print order details.
+1. Compile all Java classes in the `src/` folder.
+2. Run the `Main` class to launch the console interface.
+3. Follow the menu prompts to interact with the library.
 
-For further help with dependency management and configuration in VS Code, see the [official documentation](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+## Tools
+
+- Java
+- Visual Studio Code or any preferred Java IDE
